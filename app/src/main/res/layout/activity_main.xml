@@ -271,7 +271,8 @@
             android:layout_height="wrap_content"
             android:text="เช่ารถ"
             android:id="@+id/button2"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:onClick="carRent" />
 
         <Button
             android:layout_width="wrap_content"

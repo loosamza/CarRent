@@ -231,5 +231,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void carRent(View view) {
+        Intent intent = new Intent(getApplicationContext(), ShowCarActivity.class);
+        startActivity(intent);
+    }
 
-}//git remote add origin https://github.com/loosamza/CarRent.git
+
+}

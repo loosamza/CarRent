@@ -10,7 +10,7 @@ import android.util.Log;
  */
 public class DBHelper extends SQLiteOpenHelper {
     private final String TAG = getClass().getSimpleName();
-    private SQLiteDatabase sqLiteDatabase;
+
 
     public DBHelper(Context context) {
         super(context, Car.DATABASE_NAME, null, Car.DATABASE_VERSION);
@@ -32,10 +32,10 @@ public class DBHelper extends SQLiteOpenHelper {
                 Car.Column.CIMG
         );
 
-        Log.d(TAG, CREATE_CAR_TABLE);
 
         //Create Table Car
         db.execSQL(CREATE_CAR_TABLE);
+        Log.d(TAG, "SUCCESS");
 
 
     }
@@ -47,7 +47,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
         db.execSQL(DROP_CAR_TABLE);
 
-        Log.i(TAG, "Upgrade Database from " + oldVersion + " to " + newVersion);
+        Log.d(TAG, "Upgrade Database from " + oldVersion + " to " + newVersion);
 
         onCreate(db);
 
