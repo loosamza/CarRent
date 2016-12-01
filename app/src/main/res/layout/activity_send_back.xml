@@ -8,6 +8,18 @@
     tools:context="com.example.scontz.carrent.SendBack">
 
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="คืนรถ"
+        android:id="@+id/textView13"
+        android:background="#000000"
+        android:textSize="30dp"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp" />
+
     <ImageView
         android:layout_width="120dp"
         android:layout_height="120dp"

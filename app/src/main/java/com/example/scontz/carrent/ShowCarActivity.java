@@ -1,5 +1,6 @@
 package com.example.scontz.carrent;
 
+import android.app.ProgressDialog;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
@@ -10,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -52,12 +54,22 @@ public class ShowCarActivity extends AppCompatActivity {
         carData = new ArrayList<ListAllCar>();
         carData = mCar.allCars();
 //        Log.d("DB", ">>>" + carData.toString());
-
-        CustomAdapter adapter = new CustomAdapter(getApplicationContext(),carData);
+        CustomAdapter adapter = new CustomAdapter(getApplicationContext(), carData);
         ListView listView = (ListView) findViewById(R.id.listView);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (getIntent().getIntExtra("status", 0) == 1) {
+                    MyAlert myAlert = new MyAlert();
+                    myAlert.myDialog(ShowCarActivity.this, "คำเตือน", "คุณได้เช่ารถไปแล้วไม่สามารถเช่าเพิ่มได้!!");
+                } else {
+                    MyAlert myAlert = new MyAlert();
+                    myAlert.myDialog(ShowCarActivity.this, "ยืนยัน", "คุณต้องการที่จะเช่ารถ "
+                            + carData.get(position).getStrCNAME());
+                }
+            }
+        });
         listView.setAdapter(adapter);
-        
-
     }
 
 
@@ -78,6 +90,7 @@ public class ShowCarActivity extends AppCompatActivity {
     //Create Inner Class for Connected JSON
 
     private class MySynJSON extends AsyncTask<Void, Void, String> {
+
         @Override
         protected String doInBackground(Void... voids) {
             try {
@@ -86,7 +99,9 @@ public class ShowCarActivity extends AppCompatActivity {
                 Request.Builder builder = new Request.Builder();
                 Request request = builder.url(strURL).build();
                 Response response = okHttpClient.newCall(request).execute();
+
                 return response.body().string();
+
 
 
             } catch (Exception e) {
@@ -100,6 +115,7 @@ public class ShowCarActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String s) {
+
             super.onPostExecute(s);
             Log.d("JSON", "strJSON ===> " + s);
             try {

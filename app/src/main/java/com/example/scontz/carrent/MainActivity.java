@@ -115,8 +115,6 @@ public class MainActivity extends AppCompatActivity {
         try {
             Date dS = sdf.parse(mstrSend);
             Date dN = new Date();
-
-
             rdays = Days.daysBetween(new DateTime(dN), new DateTime(sdf.format(dS))).getDays();
 
         } catch (Exception e) {
@@ -233,6 +231,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void carRent(View view) {
         Intent intent = new Intent(getApplicationContext(), ShowCarActivity.class);
+        intent.putExtra("status", getIntent().getIntExtra("status", 0));
         startActivity(intent);
     }
 

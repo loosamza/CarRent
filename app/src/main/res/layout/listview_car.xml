@@ -10,16 +10,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight=".40"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:gravity="center">
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:background="#28324E">
 
         <ImageView
             android:id="@+id/carimg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/ic_launcher" />
+            android:layout_margin="10dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -27,30 +27,110 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight=".60"
-        android:background="#ff0000"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:gravity="left|center">
+        android:background="#475577"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="center">
 
         <TextView
             android:id="@+id/cname_tv"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="cname_tv"
             android:textSize="20sp"
-            android:textColor="#000000" />
+            android:textColor="#ffffff"
+            android:gravity="center" />
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/textView8" />
+            android:gravity="center"
+            android:background="#2c3e50" >
 
-        <TextView
-            android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="รายละเอียด"
+                android:id="@+id/textView10"
+                android:textSize="18dp"
+                android:textColor="#000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/cardetail_tv"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="text"
+                android:textColor="#ffffff"
+                android:textSize="18dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/textView10" />
+            android:gravity="center"
+            android:background="#95a5a6">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/showLoan"
+                android:id="@+id/textView11"
+                android:textSize="18dp"
+                android:textColor="#000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/feeperday_tv"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="text"
+                android:textColor="#ffffff"
+                android:textSize="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/feepermonth_tv"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="text"
+                android:textColor="#ffffff"
+                android:textSize="16dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="#7f8c8d" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="จำนวนรถที่มีอยู่"
+                android:id="@+id/textView8"
+                android:textSize="18dp"
+                android:textColor="#000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/carstock_tv"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="text"
+                android:textColor="#ffffff"
+                android:textSize="16dp" />
+
+        </LinearLayout>
+
     </LinearLayout>
 
 </LinearLayout>

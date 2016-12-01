@@ -7,4 +7,6 @@
     <string name="title_activity_register">Register</string>
     <string name="title_activity_send_back">SendBack</string>
     <string name="title_activity_show_car">ShowCarActivity</string>
+    <string name="showLoan">ราคาเช่า วัน/เดือน</string>
+    <string name="title_activity_rent_car">RentCarActivity</string>
 </resources>

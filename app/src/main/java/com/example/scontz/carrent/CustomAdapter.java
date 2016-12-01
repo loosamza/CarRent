@@ -51,8 +51,24 @@ public class CustomAdapter extends BaseAdapter {
         TextView textView = (TextView) view.findViewById(R.id.cname_tv);
         textView.setText(mData.get(position).getStrCNAME());
 
-        ImageView imageView = (ImageView) view.findViewById(R.id.carimg);
+        TextView textView1 = (TextView) view.findViewById(R.id.feeperday_tv);
+        textView1.setText("" + mData.get(position).getDoubFEEPERDAY() + " บาท/วัน");
 
+        TextView textView2 = (TextView) view.findViewById(R.id.feepermonth_tv);
+        textView2.setText("" + mData.get(position).getDoubFEEPERMONTH() + " บาท/เดือน");
+
+        TextView textView3 = (TextView) view.findViewById(R.id.cardetail_tv);
+        textView3.setText(mData.get(position).getStrDEATAIL());
+
+        TextView textView4 = (TextView) view.findViewById(R.id.carstock_tv);
+        if(mData.get(position).getIntCAMOUNT() > 0){
+            textView4.setText(mData.get(position).getIntCAMOUNT() + " คัน");
+        }else{
+            textView4.setText("ไม่มีรถเหลือแล้ว");
+        }
+
+
+        ImageView imageView = (ImageView) view.findViewById(R.id.carimg);
         Picasso.with(mContext).load(mData.get(position).getStrCIMG()).into(imageView);
 
         return view;
