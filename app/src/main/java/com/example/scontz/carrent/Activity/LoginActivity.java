@@ -1,41 +1,19 @@
-package com.example.scontz.carrent;
+package com.example.scontz.carrent.Activity;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
-import android.support.annotation.NonNull;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.app.LoaderManager.LoaderCallbacks;
 
-import android.content.CursorLoader;
-import android.content.Loader;
-import android.database.Cursor;
-import android.net.Uri;
 import android.os.AsyncTask;
 
-import android.os.Build;
 import android.os.Bundle;
-import android.provider.ContactsContract;
-import android.text.TextUtils;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.inputmethod.EditorInfo;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.squareup.okhttp.Call;
-import com.squareup.okhttp.Callback;
+import com.example.scontz.carrent.Setting.MyAlert;
+import com.example.scontz.carrent.R;
 import com.squareup.okhttp.FormEncodingBuilder;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
@@ -43,15 +21,9 @@ import com.squareup.okhttp.RequestBody;
 import com.squareup.okhttp.Response;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-
-import static android.Manifest.permission.READ_CONTACTS;
 
 
 public class LoginActivity extends AppCompatActivity {
@@ -212,6 +184,8 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         try {
             if (c == 1) {
+                intent.putExtra("username", strUsername);
+                intent.putExtra("password", strPassword);
                 intent.putExtra("date_rent", jsonObject.getString("date_rent"));
                 intent.putExtra("date_senback", jsonObject.getString("date_senback"));
                 intent.putExtra("name", jsonObject.getString("name"));
@@ -224,6 +198,8 @@ public class LoginActivity extends AppCompatActivity {
                 intent.putExtra("cid", jsonObject.getString("cid"));
                 startActivity(intent);
             } else if (c == 0) {
+                intent.putExtra("username", strUsername);
+                intent.putExtra("password", strPassword);
                 intent.putExtra("date_rent", "-");
                 intent.putExtra("date_senback", "-");
                 intent.putExtra("name", jsonObject.getString("name"));
@@ -252,6 +228,11 @@ public class LoginActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.clear();
         editor.commit();
+    }
+
+    public void signupGo(View view) {
+        Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
+        startActivity(intent);
     }
 
 

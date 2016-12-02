@@ -1,4 +1,4 @@
-package com.example.scontz.carrent;
+package com.example.scontz.carrent.Database;
 
 import android.content.ContentValues;
 import android.content.Context;

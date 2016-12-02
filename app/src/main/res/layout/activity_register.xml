@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.example.scontz.carrent.Register"
-    android:background="@drawable/login_bg">
+    tools:context=".Activity.RegisterActivity"
+    android:background="@drawable/bg00000002">
     <Button
         android:layout_width="match_parent"
         android:layout_height="70dp"
@@ -15,10 +15,11 @@
         android:layout_alignParentBottom="true"
         android:background="#000000"
         android:textColor="#ffffff"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:onClick="checkSingUp" />
 
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/imageView"
         android:layout_alignParentTop="true"
@@ -26,7 +27,9 @@
         android:layout_marginTop="75dp"
         android:src="@drawable/logo"
         android:background="#94000000"
-        android:padding="10dp" />
+        android:padding="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp" />
 
     <LinearLayout
         android:orientation="vertical"
@@ -39,7 +42,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:id="@+id/editText"
+            android:id="@+id/username_edt"
             android:hint="USERNAME"
             android:textColor="#fffdfd"
             android:textColorHint="#fffdfd"
@@ -54,7 +57,7 @@
             android:layout_height="50dp"
             android:inputType="textPassword"
             android:ems="10"
-            android:id="@+id/editText2"
+            android:id="@+id/password_edt"
             android:hint="PASSWORD"
             android:textColor="#fffdfd"
             android:textColorHint="#fffdfd"
@@ -67,7 +70,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:id="@+id/editText3"
+            android:id="@+id/name_edt"
             android:hint="NAME &amp; SURNAME"
             android:textColor="#fffdfd"
             android:textColorHint="#fffdfd"

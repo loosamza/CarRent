@@ -1,4 +1,4 @@
-package com.example.scontz.carrent;
+package com.example.scontz.carrent.Setting;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.scontz.carrent.Database.ListAllCar;
+import com.example.scontz.carrent.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -58,12 +60,17 @@ public class CustomAdapter extends BaseAdapter {
         textView2.setText("" + mData.get(position).getDoubFEEPERMONTH() + " บาท/เดือน");
 
         TextView textView3 = (TextView) view.findViewById(R.id.cardetail_tv);
-        textView3.setText(mData.get(position).getStrDEATAIL());
+        if (mData.get(position).getStrDEATAIL().length() >= 50) {
+            textView3.setText(mData.get(position).getStrDEATAIL().substring(0, 50) + "...");
+        } else {
+            textView3.setText(mData.get(position).getStrDEATAIL());
+        }
+
 
         TextView textView4 = (TextView) view.findViewById(R.id.carstock_tv);
-        if(mData.get(position).getIntCAMOUNT() > 0){
+        if (mData.get(position).getIntCAMOUNT() > 0) {
             textView4.setText(mData.get(position).getIntCAMOUNT() + " คัน");
-        }else{
+        } else {
             textView4.setText("ไม่มีรถเหลือแล้ว");
         }
 

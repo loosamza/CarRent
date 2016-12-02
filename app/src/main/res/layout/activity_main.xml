@@ -5,8 +5,8 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.example.scontz.carrent.MainActivity"
-    android:background="@drawable/login_bg">
+    tools:context=".Activity.MainActivity"
+    android:background="@drawable/bg00000002">
 
 
     <TextView
@@ -22,14 +22,15 @@
         android:paddingBottom="10dp" />
 
     <ImageView
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/imageView2"
 
         android:layout_marginTop="40dp"
-        android:background="@drawable/user"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/textView14" />
+        android:layout_below="@+id/textView14"
+        android:src="@drawable/user"
+        android:background="#bf000000" />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -274,7 +275,10 @@
             android:text="เช่ารถ"
             android:id="@+id/button2"
             android:layout_weight="1"
-            android:onClick="carRent" />
+            android:onClick="carRent"
+            android:background="#000000"
+            android:textColor="#ffffff"
+            android:textSize="18dp" />
 
         <Button
             android:layout_width="wrap_content"
@@ -282,7 +286,10 @@
             android:text="คืนรถ"
             android:id="@+id/button3"
             android:layout_weight="1"
-            android:onClick="returnCar" />
+            android:onClick="returnCar"
+            android:textColor="#000000"
+            android:background="#ffffff"
+            android:textSize="18dp" />
     </LinearLayout>
 
 </RelativeLayout>

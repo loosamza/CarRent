@@ -1,4 +1,4 @@
-package com.example.scontz.carrent;
+package com.example.scontz.carrent.Database;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

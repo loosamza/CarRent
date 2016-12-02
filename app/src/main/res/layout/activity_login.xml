@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.example.scontz.carrent.LoginActivity"
-    android:background="@drawable/login_bg">
+    tools:context=".Activity.LoginActivity"
+    android:background="@drawable/bg00000002">
 
     <Button
         android:id="@+id/button"
@@ -21,14 +21,16 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="75dp"
         android:background="#94000000"
         android:padding="10dp"
-        android:src="@drawable/logo" />
+        android:src="@drawable/logo"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -69,13 +71,17 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="#c0000000"
             android:padding="10dp"
             android:text="SIGN UP ?"
             android:textColor="#ffffff"
-            android:textSize="18dp" />
+            android:textSize="18dp"
+            android:gravity="center"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:onClick="signupGo" />
     </LinearLayout>
 </RelativeLayout>

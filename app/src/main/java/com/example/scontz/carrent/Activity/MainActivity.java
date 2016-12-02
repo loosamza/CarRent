@@ -1,4 +1,4 @@
-package com.example.scontz.carrent;
+package com.example.scontz.carrent.Activity;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -7,17 +7,14 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.scontz.carrent.Setting.MyAlert;
+import com.example.scontz.carrent.R;
 import com.squareup.okhttp.FormEncodingBuilder;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
@@ -26,25 +23,19 @@ import com.squareup.okhttp.Response;
 
 import org.joda.time.DateTime;
 import org.joda.time.Days;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
-import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.Map;
-
-import javax.xml.datatype.Duration;
 
 public class MainActivity extends AppCompatActivity {
 
-    final String P_NAME = "User_profile";
-    SharedPreferences sp;
-    SharedPreferences.Editor editor;
 
     private TextView name_tv, car_tv, rentdate_tv, totalprice_tv, sendate_tv, dateremain_tv;
-    private String strName, strCar, strRent, strSend;
+    private String strName, strCar, strRent, strSend, strUsername, strPassword;
     private double price;
     private int day = 0;
     private int rday = 0;
@@ -61,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
 
         //BlindWidget
         initWidget();
+
+
 
         // LoadPreferences(this);
 
@@ -91,6 +84,8 @@ public class MainActivity extends AppCompatActivity {
         dateremain_tv = (TextView) findViewById(R.id.remaindate_tv);
         totalprice_tv = (TextView) findViewById(R.id.totalprice_tv);
 
+        strUsername = getIntent().getStringExtra("username");
+        strPassword = getIntent().getStringExtra("password");
         strName = getIntent().getStringExtra("name");
         strCar = getIntent().getStringExtra("cname");
         strRent = getIntent().getStringExtra("date_rent");
@@ -108,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     } //initWidget
+
 
     private int calRDate(String mstrSend) {
         DateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
@@ -231,9 +227,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void carRent(View view) {
         Intent intent = new Intent(getApplicationContext(), ShowCarActivity.class);
+
+        intent.putExtra("uid", getIntent().getIntExtra("uid", 0));
+        //Log.d("UID", "" + getIntent().getIntExtra("uid", 0));
         intent.putExtra("status", getIntent().getIntExtra("status", 0));
         startActivity(intent);
     }
+
+
 
 
 }
